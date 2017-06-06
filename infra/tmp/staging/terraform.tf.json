@@ -1,0 +1,67 @@
+{
+  "resource": {
+    "aws_s3_bucket": {
+      "passalong-back-config": {
+        "bucket": "passalong-back-config",
+        "acl": "private",
+        "tags": [
+          {
+            "Name": "passalong-back-config"
+          }
+        ],
+        "lifecycle": [
+          {
+            "prevent_destroy": true
+          }
+        ]
+      },
+      "passalong-front": {
+        "bucket": "passalong-front",
+        "acl": "private",
+        "policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Sid\":\"PublicReadGetObject\",\"Effect\":\"Allow\",\"Principal\":\"*\",\"Action\":[\"s3:GetObject\"],\"Resource\":[\"arn:aws:s3:::passalong-front/*\"]}]}",
+        "website": [
+          {
+            "index_document": "index.html",
+            "error_document": "index.html"
+          }
+        ],
+        "tags": [
+          {
+            "Name": "passalong-front"
+          }
+        ],
+        "lifecycle": [
+          {
+            "prevent_destroy": true
+          }
+        ]
+      }
+    },
+    "aws_db_instance": {
+      "passalong": {
+        "allocated_storage": 5,
+        "storage_type": "gp2",
+        "engine": "postgres",
+        "engine_version": "9.6.2",
+        "identifier": "passalong-db",
+        "name": "passalong",
+        "username": "passalong",
+        "password": "passalong",
+        "instance_class": "db.t2.micro",
+        "db_subnet_group_name": "default-vpc-e3dbac87",
+        "final_snapshot_identifier": "passalong-db-final",
+        "lifecycle": [
+          {
+            "prevent_destroy": true
+          }
+        ]
+      }
+    }
+  },
+  "provider": [
+    {
+      "aws": {
+      }
+    }
+  ]
+}
