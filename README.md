@@ -2,7 +2,7 @@
 
 Passalong is an alternative UI for donorschoose.org. It's primary purpose, however, is to be a learning experience for myself so that I can increase my exposure to serverless computing.
 
-There are three directories:
+There are three top-level directories, each with a different purpose:
 
 * `passalong-back` is a Django based REST API deployed in a Lambda via Zappa
 * `passalong-front` is a React based front end hosted in S3
