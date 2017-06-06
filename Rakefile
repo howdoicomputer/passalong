@@ -39,6 +39,12 @@ namespace :backend do
       sh 'pipenv run zappa update dev'
     end
   end
+
+  task :migrate do
+    Dir.chdir('./passalong-back') do
+      sh 'pipenv run zappa manage dev migrate'
+    end
+  end
 end
 
 namespace :project do

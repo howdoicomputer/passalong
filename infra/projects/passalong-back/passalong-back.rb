@@ -11,6 +11,12 @@ project.resource('aws_s3_bucket', 'passalong-back-config') {
   }
 }
 
+project.resource('aws_s3_bucket_object', 'passalong-back-config') {
+  bucket     'passalong-back-config'
+  key        'secrets.json'
+  source     "#{Dir.pwd}/projects/passalong-back/files/secrets.json"
+}
+
 project.resource('aws_db_instance', 'passalong') {
   allocated_storage 5
   storage_type         'gp2'
@@ -23,11 +29,3 @@ project.resource('aws_db_instance', 'passalong') {
   instance_class       'db.t2.micro'
   db_subnet_group_name 'default-vpc-e3dbac87'
 }
-
-=begin
-project.resource('aws_s3_bucket_object', 'passalong-back-config') {
-  bucket 'passalong-back-config'
-  key    'secrets.json'
-  source 'files/secrets.json'
-}
-=end

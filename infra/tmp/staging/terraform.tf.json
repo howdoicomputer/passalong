@@ -37,6 +37,18 @@
         ]
       }
     },
+    "aws_s3_bucket_object": {
+      "passalong-back-config": {
+        "bucket": "passalong-back-config",
+        "key": "secrets.json",
+        "source": "C:/Users/drfra/workspace/passalong/infra/projects/passalong-back/files/secrets.json",
+        "lifecycle": [
+          {
+            "prevent_destroy": true
+          }
+        ]
+      }
+    },
     "aws_db_instance": {
       "passalong": {
         "allocated_storage": 5,
