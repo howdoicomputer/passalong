@@ -12,29 +12,26 @@ There are three top-level directories, each with a different purpose:
 
 Install:
 
-* GeoEngineer https://github.com/coinbase/geoengineer
+* Ruby
 * Python 3 and Pipenv
 * Node
 * Terraform
 
+Run `bundle` from top-level directory in order to download GeoEngineer and Rake.
+
 Configure `~/.aws/credentials`.
 
-Setting up the infrastructure:
+## Setting up the infrastructure:
 
-```
-cd infra
-geo apply
-```
+* Check to see if the plan is to your liking with `rake infra:plan`
+* Deploy your infrastructure with `rake infra:deploy`
 
-Deploying the frontend:
+## Deploying the frontend:
 
-* `yarn build`
-* `yarn run publish`
+* `rake frontend:deploy`
 
-Deploying the backend:
+## Deploying the backend:
 
-```
-zappa deploy dev
-```
+* `rake backend:deploy`
 
 ---
