@@ -22,13 +22,13 @@ namespace :frontend do
 end
 
 namespace :backend do
-  task :deploy do
+  task :provision do
     Dir.chdir('./passalong-back') do
       sh 'zappa deploy dev'
     end
   end
 
-  task :update do
+  task :deploy do
     Dir.chdir('./passalong-back') do
       sh 'zappa update dev'
     end
