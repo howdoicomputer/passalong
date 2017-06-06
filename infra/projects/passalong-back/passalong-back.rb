@@ -1,3 +1,5 @@
+require 'digest'
+
 project = project('howdoicomputer', 'passalong-back') {
   environments 'staging'
 }
@@ -11,10 +13,13 @@ project.resource('aws_s3_bucket', 'passalong-back-config') {
   }
 }
 
+secrets_source = "#{Dir.pwd}/projects/passalong-back/files/secrets.json"
+secrets_digest = Digest::MD5.file(secrets_source)
 project.resource('aws_s3_bucket_object', 'passalong-back-config') {
   bucket     'passalong-back-config'
   key        'secrets.json'
-  source     "#{Dir.pwd}/projects/passalong-back/files/secrets.json"
+  source     secrets_source
+  etag       secrets_digest
 }
 
 project.resource('aws_db_instance', 'passalong') {
@@ -28,4 +33,5 @@ project.resource('aws_db_instance', 'passalong') {
   password             'passalong'
   instance_class       'db.t2.micro'
   db_subnet_group_name 'default-vpc-e3dbac87'
+  skip_final_snapshot  true
 }
