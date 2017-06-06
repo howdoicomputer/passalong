@@ -17,9 +17,15 @@ Install:
 * Node
 * Terraform
 
-Run `bundle` from top-level directory in order to download GeoEngineer and Rake.
+Run `bundle` from the top-level directory in order to download GeoEngineer and Rake.
 
 Configure `~/.aws/credentials`.
+
+## Setting up project dependencies
+
+I'm using Node, Ruby, and Python for this project. For convenience's sake, I wrote a rake task to help with installing dependencies using the package manager for each language.
+
+* `rake project:dependencies`
 
 ## Setting up the infrastructure:
 
@@ -28,9 +34,13 @@ Configure `~/.aws/credentials`.
 
 ## Deploying the frontend:
 
+A rake task to package and deploy the frontend assets to S3.
+
 * `rake frontend:deploy`
 
 ## Deploying the backend:
+
+A rake task to deploy the Django app to a Lambda via Zappa.
 
 * `rake backend:deploy`
 

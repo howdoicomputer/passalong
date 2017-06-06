@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ff4d34a9f9d60c03b764dc8592150b78888137d00e602ff8fecc2a8aceaa63a7"
+            "sha256": "39ba242eb46f8471a62e190c2f3f9edf0ebb76a2225fc1eb35d9647b533aa0e4"
         },
         "requires": {},
         "sources": [
@@ -36,6 +36,9 @@
         "django": {
             "version": "==1.11.2"
         },
+        "django-extensions": {
+            "version": "==1.7.9"
+        },
         "djangorestframework": {
             "version": "==3.6.3"
         },
@@ -68,6 +71,9 @@
         },
         "placebo": {
             "version": "==0.8.1"
+        },
+        "psycopg2": {
+            "version": "==2.7.1"
         },
         "python-dateutil": {
             "version": "==2.6.0"
