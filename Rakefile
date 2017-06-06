@@ -1,6 +1,12 @@
 namespace :infra do
   task :plan do
     Dir.chdir('./infra') do
+      sh 'geo plan'
+    end
+  end
+
+  task :deploy do
+    Dir.chdir('./infra') do
       sh 'geo apply'
     end
   end
