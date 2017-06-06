@@ -1,0 +1,12 @@
+{
+    "dev": {
+        "aws_region": "us-east-1",
+        "django_settings": "passalong.settings",
+        "profile_name": "default",
+        "s3_bucket": "zappa-e0315f6fc",
+        "vpc_config": {
+            "SubnetIds": [ "subnet-152ad44d" ],
+            "SecurityGroupIds": [ "sg-d68d18af" ]
+        }
+    }
+}

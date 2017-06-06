@@ -25,8 +25,7 @@ SECRET_KEY = '50nnli%!nk+4u$kr5yrdy58cyf1r%x6o!)#*&)t(@&4v0@mv*q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['701bz6du07.execute-api.us-east-1.amazonaws.com']
 
 # Application definition
 
@@ -78,8 +77,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'passalong',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres'
+        'USER': 'passalong',
+        'PASSWORD': 'passalong',
+        'HOST': 'passalong-db.cldctr6muayn.us-east-1.rds.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
