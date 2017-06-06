@@ -16,7 +16,7 @@ import s from './styles.css';
 class ErrorPage extends React.Component {
 
   static propTypes = {
-    error: React.PropTypes.object,  // eslint-disable-line react/forbid-prop-types
+    error: React.PropTypes.object  // eslint-disable-line react/forbid-prop-types
   };
 
   componentDidMount() {

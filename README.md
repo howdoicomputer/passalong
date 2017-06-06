@@ -8,6 +8,10 @@ There are three top-level directories, each with a different purpose:
 * `passalong-front` is a React based front end hosted in S3
 * `infra` is a GeoEngineer/Terraform setup for building out the ancillary AWS infrastructure for the project
 
+# Demo
+
+Until I get a domain, http://passalong-front.s3-website-us-east-1.amazonaws.com/ is the place to go.
+
 # Usage
 
 Install:

@@ -19,8 +19,8 @@ class HomePage extends React.Component {
     articles: PropTypes.arrayOf(PropTypes.shape({
       url: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-    }).isRequired).isRequired,
+      author: PropTypes.string.isRequired
+    }).isRequired).isRequired
   };
 
   componentDidMount() {
